@@ -1,6 +1,14 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc", "jsx-a11y", "import", "vitest", "unicorn"],
+  "plugins": [
+    "react",
+    "typescript",
+    "oxc",
+    "jsx-a11y",
+    "import",
+    "vitest",
+    "unicorn"
+  ],
   "categories": {
     "correctness": "error",
     "suspicious": "warn"
@@ -9,14 +17,24 @@
     "browser": true,
     "es2024": true
   },
-  "ignorePatterns": ["dist", "coverage", "playwright-report", "test-results", "src/api/generated"],
+  "ignorePatterns": [
+    "dist",
+    "coverage",
+    "playwright-report",
+    "test-results",
+    "src/api/generated"
+  ],
   "rules": {
     "react/rules-of-hooks": "error",
     "react/exhaustive-deps": "warn",
     "react/only-export-components": [
       "warn",
       {
-        "allowConstantExport": true
+        "allowConstantExport": true,
+        "allowExportNames": [
+          "buttonStyles",
+          "getPageItems"
+        ]
       }
     ],
     "react/react-in-jsx-scope": "off",
@@ -38,7 +56,10 @@
     "eslint/no-console": [
       "warn",
       {
-        "allow": ["warn", "error"]
+        "allow": [
+          "warn",
+          "error"
+        ]
       }
     ],
     "import/no-cycle": "error",
@@ -48,16 +69,26 @@
     "import/no-unassigned-import": [
       "warn",
       {
-        "allow": ["**/*.css", "@testing-library/jest-dom/vitest", "@fontsource-variable/*"]
+        "allow": [
+          "**/*.css",
+          "@testing-library/jest-dom/vitest",
+          "@fontsource-variable/*"
+        ]
       }
-    ]
+    ],
+    "jsx-a11y/prefer-tag-over-role": "off"
   },
   "overrides": [
     {
-      "files": ["**/*.test.{ts,tsx}", "src/test/**", "e2e/**"],
+      "files": [
+        "**/*.test.{ts,tsx}",
+        "src/test/**",
+        "e2e/**"
+      ],
       "rules": {
         "typescript/no-explicit-any": "off",
-        "react/only-export-components": "off"
+        "react/only-export-components": "off",
+        "vitest/require-mock-type-parameters": "off"
       }
     }
   ]

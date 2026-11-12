@@ -12,7 +12,7 @@ commit realizado**.
 
 - [x] **0. Inicialização** — Vite + React + TypeScript, Tailwind, oxlint, Prettier, Vitest, snapshot
       do OpenAPI e tipos gerados, repositório privado no GitHub.
-- [ ] **1. Sistema de design** — tokens Dark Premium, tipografia, componentes base acessíveis
+- [x] **1. Sistema de design** — tokens Dark Premium, tipografia, componentes base acessíveis
       (botões, campos, modal, toast, badges, alertas, skeletons, estados vazios, paginação).
 - [ ] **2. Infraestrutura** — variáveis de ambiente validadas, cliente Supabase, camada HTTP
       (erros, token, renovação), TanStack Query, formatação, roteador e layouts.
