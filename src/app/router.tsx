@@ -181,6 +181,27 @@ export const routes: RouteObject[] = [
             ),
           },
           {
+            path: 'pedidos',
+            ...page(
+              () => import('@/features/admin/orders/AdminOrdersPage'),
+              (m) => m.AdminOrdersPage,
+            ),
+          },
+          {
+            path: 'pedidos/:orderId',
+            ...page(
+              () => import('@/features/admin/orders/AdminOrderDetailPage'),
+              (m) => m.AdminOrderDetailPage,
+            ),
+          },
+          {
+            path: 'usuarios',
+            ...page(
+              () => import('@/features/admin/users/AdminUsersPage'),
+              (m) => m.AdminUsersPage,
+            ),
+          },
+          {
             path: 'estoque',
             ...page(
               () => import('@/features/admin/stock/AdminStockPage'),

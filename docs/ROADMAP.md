@@ -30,7 +30,7 @@ commit realizado**.
 - [x] **10. Admin — catálogo** — layout administrativo, CRUD de cupcakes, upload de fotos
       (Supabase Storage), categorias e restrições.
 - [x] **11. Admin — estoque** — estoque diário, alertas, zerar estoque.
-- [ ] **12. Admin — pedidos e usuários** — listagem, cancelamento com reembolso, papéis.
+- [x] **12. Admin — pedidos e usuários** — listagem, cancelamento com reembolso, papéis.
 - [ ] **13. Admin — dashboard financeiro** — indicadores, gráficos e filtros por período.
 - [ ] **14. Testes E2E** — Playwright com API simulada (CI) e configuração de homologação.
 - [ ] **15. CI e Vercel** — GitHub Actions, `vercel.json`, revisão de acessibilidade e README final.
