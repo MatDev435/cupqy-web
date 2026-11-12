@@ -26,7 +26,7 @@ commit realizado**.
       redirecionamento ao Checkout Pro.
 - [x] **8. Pedidos** — histórico, detalhes, retorno do pagamento (sync), novo link, cancelamento,
       repetir pedido, acompanhamento em tempo real.
-- [ ] **9. Painel da cozinha** — fila em tempo real, avanço de status, nome do entregador.
+- [x] **9. Painel da cozinha** — fila em tempo real, avanço de status, nome do entregador.
 - [ ] **10. Admin — catálogo** — layout administrativo, CRUD de cupcakes, upload de fotos
       (Supabase Storage), categorias e restrições.
 - [ ] **11. Admin — estoque** — estoque diário, alertas, zerar estoque.

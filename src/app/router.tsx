@@ -1,8 +1,9 @@
 import { createBrowserRouter, type RouteObject } from 'react-router';
 import { LoadingState } from '@/components/ui';
-import { GuestOnly, RequireAuth } from '@/features/auth/RouteGuards';
+import { GuestOnly, RequireAuth, RequireRole } from '@/features/auth/RouteGuards';
 import { HomePage } from '@/features/catalog/pages/HomePage';
 import { RootLayout } from './layouts/RootLayout';
+import { StaffLayout } from './layouts/StaffLayout';
 import { StoreLayout } from './layouts/StoreLayout';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { RouteErrorPage } from './pages/RouteErrorPage';
@@ -124,6 +125,26 @@ export const routes: RouteObject[] = [
             ],
           },
           { path: '*', element: <NotFoundPage /> },
+        ],
+      },
+      {
+        // Painel da cozinha: confeiteiros e administradores (a API também valida o papel).
+        path: 'cozinha',
+        element: (
+          <RequireAuth>
+            <RequireRole roles={['BAKER', 'ADMIN']}>
+              <StaffLayout area="kitchen" />
+            </RequireRole>
+          </RequireAuth>
+        ),
+        children: [
+          {
+            index: true,
+            ...page(
+              () => import('@/features/kitchen/KitchenPage'),
+              (m) => m.KitchenPage,
+            ),
+          },
         ],
       },
     ],
