@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom/vitest';
 import { cleanup } from '@testing-library/react';
-import { afterEach } from 'vitest';
+import { afterAll, afterEach, beforeAll } from 'vitest';
+import { server } from './msw/server';
 
 // O jsdom não implementa todos os métodos do <dialog> nativo.
 if (typeof HTMLDialogElement !== 'undefined') {
@@ -34,8 +35,13 @@ if (!window.matchMedia) {
 }
 window.scrollTo = (() => {}) as typeof window.scrollTo;
 
+beforeAll(() => server.listen({ onUnhandledFrame: 'error' }));
+
 afterEach(() => {
   cleanup();
+  server.resetHandlers();
   window.localStorage.clear();
   window.sessionStorage.clear();
 });
+
+afterAll(() => server.close());
