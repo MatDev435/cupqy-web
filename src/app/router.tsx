@@ -181,6 +181,13 @@ export const routes: RouteObject[] = [
             ),
           },
           {
+            path: 'estoque',
+            ...page(
+              () => import('@/features/admin/stock/AdminStockPage'),
+              (m) => m.AdminStockPage,
+            ),
+          },
+          {
             path: 'categorias',
             ...page(
               () => import('@/features/admin/catalog/TaxonomyPage'),

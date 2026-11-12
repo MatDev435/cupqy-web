@@ -29,7 +29,7 @@ commit realizado**.
 - [x] **9. Painel da cozinha** — fila em tempo real, avanço de status, nome do entregador.
 - [x] **10. Admin — catálogo** — layout administrativo, CRUD de cupcakes, upload de fotos
       (Supabase Storage), categorias e restrições.
-- [ ] **11. Admin — estoque** — estoque diário, alertas, zerar estoque.
+- [x] **11. Admin — estoque** — estoque diário, alertas, zerar estoque.
 - [ ] **12. Admin — pedidos e usuários** — listagem, cancelamento com reembolso, papéis.
 - [ ] **13. Admin — dashboard financeiro** — indicadores, gráficos e filtros por período.
 - [ ] **14. Testes E2E** — Playwright com API simulada (CI) e configuração de homologação.
