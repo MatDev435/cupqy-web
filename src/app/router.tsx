@@ -87,6 +87,13 @@ export const routes: RouteObject[] = [
             element: <RequireAuth />,
             children: [
               {
+                path: 'checkout',
+                ...page(
+                  () => import('@/features/checkout/pages/CheckoutPage'),
+                  (m) => m.CheckoutPage,
+                ),
+              },
+              {
                 path: 'conta',
                 ...page(
                   () => import('@/features/account/pages/AccountPage'),
