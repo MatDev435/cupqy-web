@@ -1,4 +1,4 @@
-import { createBrowserRouter, type RouteObject } from 'react-router';
+import { createBrowserRouter, Navigate, type RouteObject } from 'react-router';
 import { LoadingState } from '@/components/ui';
 import { GuestOnly, RequireAuth, RequireRole } from '@/features/auth/RouteGuards';
 import { HomePage } from '@/features/catalog/pages/HomePage';
@@ -145,6 +145,56 @@ export const routes: RouteObject[] = [
               (m) => m.KitchenPage,
             ),
           },
+        ],
+      },
+      {
+        // Administração: somente ADMIN (a API valida cada permissão).
+        path: 'admin',
+        element: (
+          <RequireAuth>
+            <RequireRole roles={['ADMIN']}>
+              <StaffLayout area="admin" />
+            </RequireRole>
+          </RequireAuth>
+        ),
+        children: [
+          { index: true, element: <Navigate to="cupcakes" replace /> },
+          {
+            path: 'cupcakes',
+            ...page(
+              () => import('@/features/admin/catalog/AdminCupcakesPage'),
+              (m) => m.AdminCupcakesPage,
+            ),
+          },
+          {
+            path: 'cupcakes/novo',
+            ...page(
+              () => import('@/features/admin/catalog/AdminCupcakeFormPage'),
+              (m) => m.AdminCupcakeFormPage,
+            ),
+          },
+          {
+            path: 'cupcakes/:cupcakeId',
+            ...page(
+              () => import('@/features/admin/catalog/AdminCupcakeFormPage'),
+              (m) => m.AdminCupcakeFormPage,
+            ),
+          },
+          {
+            path: 'categorias',
+            ...page(
+              () => import('@/features/admin/catalog/TaxonomyPage'),
+              (m) => m.AdminCategoriesPage,
+            ),
+          },
+          {
+            path: 'restricoes',
+            ...page(
+              () => import('@/features/admin/catalog/TaxonomyPage'),
+              (m) => m.AdminDietaryTagsPage,
+            ),
+          },
+          { path: '*', element: <NotFoundPage /> },
         ],
       },
     ],

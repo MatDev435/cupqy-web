@@ -27,7 +27,7 @@ commit realizado**.
 - [x] **8. Pedidos** — histórico, detalhes, retorno do pagamento (sync), novo link, cancelamento,
       repetir pedido, acompanhamento em tempo real.
 - [x] **9. Painel da cozinha** — fila em tempo real, avanço de status, nome do entregador.
-- [ ] **10. Admin — catálogo** — layout administrativo, CRUD de cupcakes, upload de fotos
+- [x] **10. Admin — catálogo** — layout administrativo, CRUD de cupcakes, upload de fotos
       (Supabase Storage), categorias e restrições.
 - [ ] **11. Admin — estoque** — estoque diário, alertas, zerar estoque.
 - [ ] **12. Admin — pedidos e usuários** — listagem, cancelamento com reembolso, papéis.

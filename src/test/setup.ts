@@ -40,6 +40,8 @@ if (!window.matchMedia) {
     }) as MediaQueryList;
 }
 window.scrollTo = (() => {}) as typeof window.scrollTo;
+URL.createObjectURL ??= () => 'blob:preview';
+URL.revokeObjectURL ??= () => {};
 
 beforeAll(() => server.listen({ onUnhandledFrame: 'error' }));
 
