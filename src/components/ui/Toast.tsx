@@ -60,8 +60,8 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       >
         {/* Regiões vivas sempre presentes no DOM para que leitores de tela anunciem as mensagens. */}
         <div
-          role="status"
           aria-live="polite"
+          aria-relevant="additions text"
           className="flex w-full flex-col items-center gap-2 sm:items-end"
         >
           {polite.map((item) => (
@@ -69,8 +69,8 @@ export function ToastProvider({ children }: { children: ReactNode }) {
           ))}
         </div>
         <div
-          role="alert"
           aria-live="assertive"
+          aria-relevant="additions text"
           className="flex w-full flex-col items-center gap-2 sm:items-end"
         >
           {assertive.map((item) => (

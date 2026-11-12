@@ -24,7 +24,8 @@ describe('Toast', () => {
       </ToastProvider>,
     );
     await userEvent.click(screen.getByRole('button', { name: 'Notificar' }));
-    expect(screen.getByRole('status')).toHaveTextContent('Pedido realizado com sucesso!');
+    const message = screen.getByText('Pedido realizado com sucesso!');
+    expect(message.closest('[aria-live]')).toHaveAttribute('aria-live', 'polite');
     act(() => vi.advanceTimersByTime(5100));
     expect(screen.queryByText('Pedido realizado com sucesso!')).not.toBeInTheDocument();
   });
@@ -36,7 +37,8 @@ describe('Toast', () => {
       </ToastProvider>,
     );
     await userEvent.click(screen.getByRole('button', { name: 'Notificar' }));
-    expect(screen.getByRole('alert')).toHaveTextContent('Pedido realizado com sucesso!');
+    const message = screen.getByText('Pedido realizado com sucesso!');
+    expect(message.closest('[aria-live]')).toHaveAttribute('aria-live', 'assertive');
     await userEvent.click(screen.getByRole('button', { name: 'Fechar notificação' }));
     expect(screen.queryByText('Pedido realizado com sucesso!')).not.toBeInTheDocument();
   });

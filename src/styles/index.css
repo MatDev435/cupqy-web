@@ -183,11 +183,12 @@
   color: transparent;
 }
 
-/* Brilho suave de fundo usado em heros e cabeçalhos */
+/* Brilho suave de fundo usado em heros e cabeçalhos (as bordas se dissolvem no fundo) */
 @utility bg-radial-glow {
   background-image:
     radial-gradient(60% 80% at 80% 20%, rgb(233 166 189 / 0.12) 0%, transparent 60%),
-    radial-gradient(50% 60% at 10% 90%, rgb(185 154 247 / 0.08) 0%, transparent 60%);
+    radial-gradient(50% 60% at 10% 80%, rgb(185 154 247 / 0.07) 0%, transparent 60%);
+  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
 }
 
 @utility skeleton {

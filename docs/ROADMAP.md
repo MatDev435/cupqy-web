@@ -14,9 +14,9 @@ commit realizado**.
       do OpenAPI e tipos gerados, repositório privado no GitHub.
 - [x] **1. Sistema de design** — tokens Dark Premium, tipografia, componentes base acessíveis
       (botões, campos, modal, toast, badges, alertas, skeletons, estados vazios, paginação).
-- [ ] **2. Infraestrutura** — variáveis de ambiente validadas, cliente Supabase, camada HTTP
+- [x] **2. Infraestrutura** — variáveis de ambiente validadas, cliente Supabase, camada HTTP
       (erros, token, renovação), TanStack Query, formatação, roteador e layouts.
-- [ ] **3. Autenticação** — AuthProvider, cadastro, login, logout, recuperação e redefinição de
+- [x] **3. Autenticação** — AuthProvider, cadastro, login, logout, recuperação e redefinição de
       senha, guards de rota por papel.
 - [ ] **4. Vitrine** — home, catálogo com busca/filtros/paginação, categorias, detalhes do cupcake,
       estoque em tempo real.

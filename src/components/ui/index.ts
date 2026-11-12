@@ -15,6 +15,7 @@ export {
   TextField,
 } from './Field';
 export { ConfirmDialog, Modal } from './Modal';
+export { Drawer } from './Drawer';
 export { PageHeader } from './PageHeader';
 export { Pagination } from './Pagination';
 export { QuantityStepper } from './QuantityStepper';
