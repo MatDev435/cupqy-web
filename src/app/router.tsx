@@ -23,6 +23,27 @@ export const routes: RouteObject[] = [
         children: [
           { index: true, element: <HomePage /> },
           {
+            path: 'cupcakes',
+            ...page(
+              () => import('@/features/catalog/pages/CatalogPage'),
+              (m) => m.CatalogPage,
+            ),
+          },
+          {
+            path: 'cupcakes/:cupcakeId',
+            ...page(
+              () => import('@/features/catalog/pages/CupcakeDetailPage'),
+              (m) => m.CupcakeDetailPage,
+            ),
+          },
+          {
+            path: 'categorias',
+            ...page(
+              () => import('@/features/catalog/pages/CategoriesPage'),
+              (m) => m.CategoriesPage,
+            ),
+          },
+          {
             element: <GuestOnly />,
             children: [
               {

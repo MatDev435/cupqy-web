@@ -1,7 +1,12 @@
 import '@testing-library/jest-dom/vitest';
 import { cleanup } from '@testing-library/react';
-import { afterAll, afterEach, beforeAll } from 'vitest';
+import { afterAll, afterEach, beforeAll, vi } from 'vitest';
 import { server } from './msw/server';
+
+// O Supabase Realtime nunca conecta nos testes de componentes (as telas usam o polling).
+vi.mock('@/hooks/useRealtimeInvalidation', () => ({
+  useRealtimeInvalidation: () => ({ connected: false }),
+}));
 
 // O jsdom não implementa todos os métodos do <dialog> nativo.
 if (typeof HTMLDialogElement !== 'undefined') {

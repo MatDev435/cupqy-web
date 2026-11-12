@@ -18,7 +18,7 @@ commit realizado**.
       (erros, token, renovação), TanStack Query, formatação, roteador e layouts.
 - [x] **3. Autenticação** — AuthProvider, cadastro, login, logout, recuperação e redefinição de
       senha, guards de rota por papel.
-- [ ] **4. Vitrine** — home, catálogo com busca/filtros/paginação, categorias, detalhes do cupcake,
+- [x] **4. Vitrine** — home, catálogo com busca/filtros/paginação, categorias, detalhes do cupcake,
       estoque em tempo real.
 - [ ] **5. Carrinho** — persistência local, validação no servidor, resumo.
 - [ ] **6. Conta do cliente** — perfil, endereços (com CEP), troca de senha, exclusão de conta.

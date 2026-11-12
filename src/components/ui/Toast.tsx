@@ -3,9 +3,10 @@ import { CheckCircle2, Info, TriangleAlert, XCircle, X } from 'lucide-react';
 import { cn } from '@/lib/cn';
 import { ToastContext, type ToastOptions, type ToastTone } from './toastContext';
 
-interface ToastItem extends Required<Omit<ToastOptions, 'description'>> {
+interface ToastItem extends Required<Omit<ToastOptions, 'description' | 'action'>> {
   id: number;
   description?: string;
+  action?: ToastOptions['action'];
 }
 
 const toneStyles: Record<ToastTone, { icon: typeof Info; className: string; iconClass: string }> = {
@@ -38,6 +39,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       id: nextId++,
       title: options.title,
       description: options.description,
+      action: options.action,
       tone,
       duration: options.duration ?? (tone === 'error' ? 8000 : 5000),
     };
@@ -114,6 +116,18 @@ function ToastCard({ item, onDismiss }: { item: ToastItem; onDismiss: (id: numbe
       <div className="flex min-w-0 flex-1 flex-col gap-0.5">
         <p className="text-sm font-medium text-fg">{item.title}</p>
         {item.description && <p className="text-sm text-muted">{item.description}</p>}
+        {item.action && (
+          <button
+            type="button"
+            onClick={() => {
+              item.action?.onClick();
+              onDismiss(item.id);
+            }}
+            className="mt-1 self-start text-sm font-medium text-primary underline-offset-4 hover:underline"
+          >
+            {item.action.label}
+          </button>
+        )}
       </div>
       <button
         type="button"

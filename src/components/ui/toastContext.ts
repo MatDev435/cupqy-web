@@ -8,6 +8,8 @@ export interface ToastOptions {
   tone?: ToastTone;
   /** Duração em ms (padrão: 5s; erros: 8s). Use 0 para não fechar sozinho. */
   duration?: number;
+  /** Ação opcional (ex.: "Ver carrinho"). */
+  action?: { label: string; onClick: () => void };
 }
 
 export interface ToastContextValue {
