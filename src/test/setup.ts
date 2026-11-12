@@ -41,6 +41,11 @@ if (!window.matchMedia) {
 }
 window.scrollTo = (() => {}) as typeof window.scrollTo;
 URL.createObjectURL ??= () => 'blob:preview';
+globalThis.ResizeObserver ??= class {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+};
 URL.revokeObjectURL ??= () => {};
 
 beforeAll(() => server.listen({ onUnhandledFrame: 'error' }));

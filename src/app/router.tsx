@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate, type RouteObject } from 'react-router';
+import { createBrowserRouter, type RouteObject } from 'react-router';
 import { LoadingState } from '@/components/ui';
 import { GuestOnly, RequireAuth, RequireRole } from '@/features/auth/RouteGuards';
 import { HomePage } from '@/features/catalog/pages/HomePage';
@@ -158,7 +158,13 @@ export const routes: RouteObject[] = [
           </RequireAuth>
         ),
         children: [
-          { index: true, element: <Navigate to="cupcakes" replace /> },
+          {
+            index: true,
+            ...page(
+              () => import('@/features/admin/dashboard/AdminDashboardPage'),
+              (m) => m.AdminDashboardPage,
+            ),
+          },
           {
             path: 'cupcakes',
             ...page(
