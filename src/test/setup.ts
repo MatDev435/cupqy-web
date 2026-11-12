@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom/vitest';
 import { cleanup } from '@testing-library/react';
-import { afterAll, afterEach, beforeAll, vi } from 'vitest';
+import { afterAll, afterEach, beforeAll, beforeEach, vi } from 'vitest';
+import { configureAuth } from '@/api/http';
 import { server } from './msw/server';
 
 // O Supabase Realtime nunca conecta nos testes de componentes (as telas usam o polling).
@@ -41,6 +42,15 @@ if (!window.matchMedia) {
 window.scrollTo = (() => {}) as typeof window.scrollTo;
 
 beforeAll(() => server.listen({ onUnhandledFrame: 'error' }));
+
+// Requisições autenticadas usam um token fixo (as telas recebem o contexto de auth simulado).
+beforeEach(() => {
+  configureAuth({
+    getAccessToken: async () => 'test-access-token',
+    refreshAccessToken: async () => null,
+    onUnauthorized: () => {},
+  });
+});
 
 afterEach(() => {
   cleanup();

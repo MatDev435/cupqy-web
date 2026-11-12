@@ -85,7 +85,22 @@ export const routes: RouteObject[] = [
           },
           {
             element: <RequireAuth />,
-            children: [],
+            children: [
+              {
+                path: 'conta',
+                ...page(
+                  () => import('@/features/account/pages/AccountPage'),
+                  (m) => m.AccountPage,
+                ),
+              },
+              {
+                path: 'conta/enderecos',
+                ...page(
+                  () => import('@/features/account/pages/AddressesPage'),
+                  (m) => m.AddressesPage,
+                ),
+              },
+            ],
           },
           { path: '*', element: <NotFoundPage /> },
         ],
