@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /cozinha
+Disallow: /conta
+Disallow: /checkout
+Disallow: /pedidos
+Disallow: /redefinir-senha
