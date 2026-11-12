@@ -33,8 +33,19 @@ commit realizado**.
 - [x] **12. Admin — pedidos e usuários** — listagem, cancelamento com reembolso, papéis.
 - [x] **13. Admin — dashboard financeiro** — indicadores, gráficos e filtros por período.
 - [x] **14. Testes E2E** — Playwright com API simulada (CI) e configuração de homologação.
-- [ ] **15. CI e Vercel** — GitHub Actions, `vercel.json`, revisão de acessibilidade e README final.
+- [x] **15. CI e Vercel** — GitHub Actions, `vercel.json`, revisão de acessibilidade e README final.
 
 ## Pendências conhecidas e próximos passos
 
-Ver a seção "Status do projeto" do [README](../README.md#status-do-projeto).
+Todas as fases planejadas foram implementadas. O que depende de decisões ou credenciais externas:
+
+- [ ] **Deploy na Vercel** — preparado (`vercel.json`), aguardando autorização.
+- [ ] **E2E em homologação** — `npm run e2e:hml` pronto; requer `.env` do Supabase `cupqy-hml`, API
+      local e usuários de teste controlados.
+- [ ] **Captcha no login (US02 CA#05)** — escolher hCaptcha ou Turnstile no Supabase Auth e integrar o
+      widget (enviar `captchaToken` em `signInWithPassword`/`signUp`).
+- [ ] **Realtime em produção** — aplicar `supabase/sql/01_security.sql` e `02_realtime.sql` do back-end.
+- [ ] **Bateria de pagamentos no sandbox** — aprovado, pendente, recusado e Pix com o Checkout Pro real.
+
+Detalhes e incompatibilidades com as User Stories: [README → Status do projeto](../README.md#status-do-projeto)
+e [`PLANNING.md`](PLANNING.md#6-incompatibilidades-entre-as-user-stories-e-a-api).
