@@ -51,7 +51,11 @@ export function CupcakeImage({
           )}
         />
       ) : (
-        <div className="flex size-full items-center justify-center" role="img" aria-label={alt}>
+        <div
+          className="flex size-full items-center justify-center"
+          // Placeholder decorativo quando alt="" (a informação já está no texto ao lado).
+          {...(alt ? { role: 'img', 'aria-label': alt } : { 'aria-hidden': true })}
+        >
           <div className="absolute inset-0 bg-radial-glow" aria-hidden="true" />
           <LogoMark className="relative size-1/3 max-h-24 max-w-24 text-primary/45" />
         </div>

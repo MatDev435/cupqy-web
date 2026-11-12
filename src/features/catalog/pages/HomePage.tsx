@@ -208,7 +208,7 @@ export function HomePage() {
                     to={`/cupcakes?categoria=${category.slug}`}
                     className="group flex h-full flex-col justify-between gap-6 rounded-2xl border border-line bg-surface p-6 shadow-card transition-[border-color,transform] hover:-translate-y-0.5 hover:border-primary/40"
                   >
-                    <span className="font-display text-3xl text-primary/40" aria-hidden="true">
+                    <span className="font-display text-3xl text-primary/75" aria-hidden="true">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <span className="flex flex-col gap-1">
