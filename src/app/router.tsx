@@ -94,6 +94,20 @@ export const routes: RouteObject[] = [
                 ),
               },
               {
+                path: 'pedidos',
+                ...page(
+                  () => import('@/features/orders/pages/OrdersPage'),
+                  (m) => m.OrdersPage,
+                ),
+              },
+              {
+                path: 'pedidos/:orderId',
+                ...page(
+                  () => import('@/features/orders/pages/OrderDetailPage'),
+                  (m) => m.OrderDetailPage,
+                ),
+              },
+              {
                 path: 'conta',
                 ...page(
                   () => import('@/features/account/pages/AccountPage'),
