@@ -32,7 +32,7 @@ commit realizado**.
 - [x] **11. Admin — estoque** — estoque diário, alertas, zerar estoque.
 - [x] **12. Admin — pedidos e usuários** — listagem, cancelamento com reembolso, papéis.
 - [x] **13. Admin — dashboard financeiro** — indicadores, gráficos e filtros por período.
-- [ ] **14. Testes E2E** — Playwright com API simulada (CI) e configuração de homologação.
+- [x] **14. Testes E2E** — Playwright com API simulada (CI) e configuração de homologação.
 - [ ] **15. CI e Vercel** — GitHub Actions, `vercel.json`, revisão de acessibilidade e README final.
 
 ## Pendências conhecidas e próximos passos

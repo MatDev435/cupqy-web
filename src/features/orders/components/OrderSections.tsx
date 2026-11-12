@@ -20,7 +20,7 @@ export function OrderItemsCard({ order }: { order: OrderDetail }) {
             <th scope="col" className="pb-2 text-right font-medium">
               Qtd.
             </th>
-            <th scope="col" className="hidden pb-2 text-right font-medium sm:table-cell">
+            <th scope="col" className="pb-2 text-right font-medium">
               Unitário
             </th>
             <th scope="col" className="pb-2 text-right font-medium">
@@ -35,7 +35,7 @@ export function OrderItemsCard({ order }: { order: OrderDetail }) {
                 {item.name}
               </th>
               <td className="py-2.5 text-right tabular-nums">{item.quantity}</td>
-              <td className="hidden py-2.5 text-right text-muted tabular-nums sm:table-cell">
+              <td className="py-2.5 text-right text-muted tabular-nums">
                 {formatMoney(item.unitPriceCents)}
               </td>
               <td className="py-2.5 text-right tabular-nums">{formatMoney(item.subtotalCents)}</td>

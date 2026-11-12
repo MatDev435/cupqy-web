@@ -38,3 +38,7 @@ e2e/.auth
 *.njsproj
 *.sln
 *.sw?
+
+# E2E
+dist-e2e
+playwright-report-hml

@@ -1,8 +1,11 @@
 import '@testing-library/jest-dom/vitest';
-import { cleanup } from '@testing-library/react';
+import { cleanup, configure } from '@testing-library/react';
 import { afterAll, afterEach, beforeAll, beforeEach, vi } from 'vitest';
 import { configureAuth } from '@/api/http';
 import { server } from './msw/server';
+
+// Componentes carregados sob demanda (ex.: gráfico) podem demorar sob carga na CI.
+configure({ asyncUtilTimeout: 4000 });
 
 // O Supabase Realtime nunca conecta nos testes de componentes (as telas usam o polling).
 vi.mock('@/hooks/useRealtimeInvalidation', () => ({
