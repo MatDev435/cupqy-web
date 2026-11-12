@@ -20,7 +20,7 @@ commit realizado**.
       senha, guards de rota por papel.
 - [x] **4. Vitrine** — home, catálogo com busca/filtros/paginação, categorias, detalhes do cupcake,
       estoque em tempo real.
-- [ ] **5. Carrinho** — persistência local, validação no servidor, resumo.
+- [x] **5. Carrinho** — persistência local, validação no servidor, resumo.
 - [ ] **6. Conta do cliente** — perfil, endereços (com CEP), troca de senha, exclusão de conta.
 - [ ] **7. Checkout + Mercado Pago** — entrega/retirada, cotação de frete, criação do pedido,
       redirecionamento ao Checkout Pro.

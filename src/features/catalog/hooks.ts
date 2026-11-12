@@ -57,7 +57,7 @@ export function useDietaryTags() {
 export function useLiveStock(enabled = true) {
   return useRealtimeInvalidation({
     table: 'daily_stock',
-    queryKeys: [queryKeys.catalog.all],
+    queryKeys: [queryKeys.catalog.all, ['cart']],
     enabled,
   });
 }

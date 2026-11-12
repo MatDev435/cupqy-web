@@ -37,6 +37,13 @@ export const routes: RouteObject[] = [
             ),
           },
           {
+            path: 'carrinho',
+            ...page(
+              () => import('@/features/cart/pages/CartPage'),
+              (m) => m.CartPage,
+            ),
+          },
+          {
             path: 'categorias',
             ...page(
               () => import('@/features/catalog/pages/CategoriesPage'),
